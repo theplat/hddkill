@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 for n in `ls /dev/sd[a-z]`
 do
