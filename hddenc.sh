@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+n#!/usr/bin/env bash
 
 if [ -z "$1" ]
 then
   echo "Quitting, you didnt specify a device"
-  exit 1
+  return
 fi
 
 DEVICE=$1
