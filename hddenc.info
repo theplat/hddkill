@@ -1,3 +1,4 @@
 DEVICE="/dev/sdX"
 PASS=$(tr -cd '[:alnum:]' < /dev/urandom | head -c128)
-openssl enc -aes-256-ctr -pbkdf2 -iter 10000 -pass pass:"$PASS" -nosalt </dev/zero | dd obs=64K ibs=4K of=$DEVICE oflag=direct status=progress
+sudo openssl enc -aes-256-ctr -pbkdf2 -iter 10000 -pass pass:"$PASS" -nosalt </dev/zero | sudo dd obs=64K ibs=4K of=$DEVICE oflag=direct status=progress
+dd if=/dev/zero of=$DEVICE bs=1M status=progress
